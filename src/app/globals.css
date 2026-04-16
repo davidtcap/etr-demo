@@ -1,26 +1,184 @@
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #08090a;
+  --foreground: #f7f8f8;
+}
+
+html[data-theme="light"] {
+  --background: #eef2f7;
+  --foreground: #0f172a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans:
+    "Inter Variable", "Inter", "SF Pro Display", -apple-system, system-ui,
+    "Segoe UI", sans-serif;
+  --font-mono: "Berkeley Mono", "SFMono-Regular", "Menlo", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
 }
 
 body {
+  margin: 0;
+  min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-feature-settings: "cv01", "ss03";
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  font-family: var(--font-sans);
+  background: #0f1011;
+}
+
+.leaflet-control-attribution {
+  font-size: 10px;
+  background: rgba(8, 9, 10, 0.72) !important;
+  color: #8a8f98 !important;
+}
+
+.leaflet-control-attribution a {
+  color: #d0d6e0 !important;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: #191a1b !important;
+  color: #f7f8f8 !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+}
+
+.leaflet-control-zoom a {
+  background: rgba(255, 255, 255, 0.04) !important;
+  color: #f7f8f8 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.leaflet-control-zoom {
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html[data-theme="light"] .leaflet-container {
+  background: #dbe5f4;
+}
+
+html[data-theme="light"] .leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.88) !important;
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .leaflet-control-attribution a {
+  color: #1e293b !important;
+}
+
+html[data-theme="light"] .leaflet-popup-content-wrapper,
+html[data-theme="light"] .leaflet-popup-tip {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-theme="light"] .leaflet-control-zoom a {
+  background: rgba(255, 255, 255, 0.94) !important;
+  color: #0f172a !important;
+  border-bottom-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-theme="light"] .leaflet-control-zoom {
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+.gridops-shell[data-theme="light"] {
+  background: #eef2f7 !important;
+  color: #0f172a !important;
+}
+
+.gridops-shell[data-theme="light"] > div:first-child {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-bottom-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+.gridops-shell[data-theme="light"] section,
+.gridops-shell[data-theme="light"] details,
+.gridops-shell[data-theme="light"] [class*="bg-[#0f1011]"],
+.gridops-shell[data-theme="light"] [class*="bg-[rgba(255,255,255,0.04)]"],
+.gridops-shell[data-theme="light"] [class*="bg-[rgba(255,255,255,0.03)]"],
+.gridops-shell[data-theme="light"] [class*="bg-[rgba(255,255,255,0.02)]"] {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    0 1px 2px rgba(15, 23, 42, 0.06) !important;
+}
+
+.gridops-shell[data-theme="light"] [class*="bg-[radial-gradient"] {
+  background:
+    radial-gradient(circle at top, rgba(94, 106, 210, 0.12), transparent 42%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+}
+
+.gridops-shell[data-theme="light"] [class*="text-[#f7f8f8]"],
+.gridops-shell[data-theme="light"] [class*="text-white"] {
+  color: #0f172a !important;
+}
+
+.gridops-shell[data-theme="light"] [class*="text-[#d0d6e0]"] {
+  color: #334155 !important;
+}
+
+.gridops-shell[data-theme="light"] [class*="text-[#a8adb7]"] {
+  color: #475569 !important;
+}
+
+.gridops-shell[data-theme="light"] [class*="text-[#8a8f98]"],
+.gridops-shell[data-theme="light"] [class*="text-[#62666d]"] {
+  color: #64748b !important;
+}
+
+.gridops-shell[data-theme="light"] [class*="placeholder:text-[#62666d]"]::placeholder {
+  color: #94a3b8 !important;
+}
+
+.gridops-shell[data-theme="light"] input,
+.gridops-shell[data-theme="light"] select {
+  color: #0f172a !important;
+}
+
+.gridops-shell[data-theme="light"] button {
+  color: inherit;
+}
+
+.gridops-shell[data-theme="light"] [class*="bg-[#5e6ad2]"],
+.gridops-shell[data-theme="light"] [class*="bg-[#7170ff]"] {
+  color: #ffffff !important;
+}
+
+.gridops-shell[data-theme="light"] [class*="bg-[#0b1020]"] {
+  background: #dbe5f4 !important;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+::selection {
+  background: rgba(39, 111, 94, 0.18);
 }

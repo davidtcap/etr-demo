@@ -1,0 +1,267 @@
+{
+  "generated_scenarios": [
+    {
+      "scenario_name": "ab_447_rich_demo",
+      "outage_id": "OUT-2026-004521",
+      "customer_count": 1630,
+      "vulnerable_customers": 9,
+      "event_count": 25,
+      "path_counts": {
+        "PathA_MainRepair": 1160,
+        "PathB_AlternateFeed": 180,
+        "PathC_PartialOutageStabilization": 290
+      },
+      "path_c_states": {
+        "out": 187,
+        "brownout": 23,
+        "degraded": 80
+      },
+      "initial_prediction": {
+        "p50": 52,
+        "p80": 58,
+        "p95": 62,
+        "confidence": 0.9
+      },
+      "refined_prediction": {
+        "p50": 100,
+        "p80": 109,
+        "p95": 118,
+        "confidence": 0.9
+      },
+      "simulation": {
+        "mode": "simulation",
+        "sample_count": 1200,
+        "seed": 44716,
+        "method": "seeded_monte_carlo_triangular_distributions"
+      },
+      "conditions": {
+        "weather_severity": "moderate",
+        "alternate_feed_available": true,
+        "parts_in_stock": true,
+        "traffic_multiplier": 1.22,
+        "vegetation_risk_level": "high"
+      },
+      "output_path": "C:\\Users\\jbuard\\Downloads\\hackaton demo script\\mock_data\\output\\event_stream_ab_447_rich_demo.jsonl",
+      "scenario_snapshot_path": "C:\\Users\\jbuard\\Downloads\\hackaton demo script\\mock_data\\output\\scenario_snapshot_ab_447_rich_demo.json"
+    },
+    {
+      "scenario_name": "ab_447_fast_veg_access",
+      "outage_id": "OUT-2026-004522",
+      "customer_count": 1630,
+      "vulnerable_customers": 6,
+      "event_count": 25,
+      "path_counts": {
+        "PathA_MainRepair": 1160,
+        "PathB_AlternateFeed": 180,
+        "PathC_PartialOutageStabilization": 290
+      },
+      "path_c_states": {
+        "out": 187,
+        "brownout": 23,
+        "degraded": 80
+      },
+      "initial_prediction": {
+        "p50": 45,
+        "p80": 49,
+        "p95": 53,
+        "confidence": 0.9
+      },
+      "refined_prediction": {
+        "p50": 88,
+        "p80": 96,
+        "p95": 105,
+        "confidence": 0.9
+      },
+      "simulation": {
+        "mode": "simulation",
+        "sample_count": 1200,
+        "seed": 44717,
+        "method": "seeded_monte_carlo_triangular_distributions"
+      },
+      "conditions": {
+        "weather_severity": "low",
+        "alternate_feed_available": true,
+        "parts_in_stock": true,
+        "traffic_multiplier": 1.05,
+        "vegetation_risk_level": "medium"
+      },
+      "output_path": "C:\\Users\\jbuard\\Downloads\\hackaton demo script\\mock_data\\output\\event_stream_ab_447_fast_veg_access.jsonl",
+      "scenario_snapshot_path": "C:\\Users\\jbuard\\Downloads\\hackaton demo script\\mock_data\\output\\scenario_snapshot_ab_447_fast_veg_access.json"
+    },
+    {
+      "scenario_name": "ab_447_severe_weather",
+      "outage_id": "OUT-2026-004523",
+      "customer_count": 1630,
+      "vulnerable_customers": 14,
+      "event_count": 25,
+      "path_counts": {
+        "PathA_MainRepair": 1160,
+        "PathB_AlternateFeed": 180,
+        "PathC_PartialOutageStabilization": 290
+      },
+      "path_c_states": {
+        "out": 187,
+        "brownout": 23,
+        "degraded": 80
+      },
+      "initial_prediction": {
+        "p50": 60,
+        "p80": 67,
+        "p95": 73,
+        "confidence": 0.9
+      },
+      "refined_prediction": {
+        "p50": 117,
+        "p80": 129,
+        "p95": 138,
+        "confidence": 0.9
+      },
+      "simulation": {
+        "mode": "simulation",
+        "sample_count": 1600,
+        "seed": 44718,
+        "method": "seeded_monte_carlo_triangular_distributions"
+      },
+      "conditions": {
+        "weather_severity": "high",
+        "alternate_feed_available": true,
+        "parts_in_stock": true,
+        "traffic_multiplier": 1.48,
+        "vegetation_risk_level": "high"
+      },
+      "output_path": "C:\\Users\\jbuard\\Downloads\\hackaton demo script\\mock_data\\output\\event_stream_ab_447_severe_weather.jsonl",
+      "scenario_snapshot_path": "C:\\Users\\jbuard\\Downloads\\hackaton demo script\\mock_data\\output\\scenario_snapshot_ab_447_severe_weather.json"
+    },
+    {
+      "scenario_name": "ab_447_no_alternate_feed",
+      "outage_id": "OUT-2026-004524",
+      "customer_count": 1630,
+      "vulnerable_customers": 9,
+      "event_count": 25,
+      "path_counts": {
+        "PathA_MainRepair": 1340,
+        "PathC_PartialOutageStabilization": 290
+      },
+      "path_c_states": {
+        "out": 205,
+        "brownout": 31,
+        "degraded": 54
+      },
+      "initial_prediction": {
+        "p50": 58,
+        "p80": 63,
+        "p95": 70,
+        "confidence": 0.88
+      },
+      "refined_prediction": {
+        "p50": 100,
+        "p80": 109,
+        "p95": 118,
+        "confidence": 0.9
+      },
+      "simulation": {
+        "mode": "simulation",
+        "sample_count": 1200,
+        "seed": 44719,
+        "method": "seeded_monte_carlo_triangular_distributions"
+      },
+      "conditions": {
+        "weather_severity": "moderate",
+        "alternate_feed_available": false,
+        "parts_in_stock": true,
+        "traffic_multiplier": 1.18,
+        "vegetation_risk_level": "high"
+      },
+      "output_path": "C:\\Users\\jbuard\\Downloads\\hackaton demo script\\mock_data\\output\\event_stream_ab_447_no_alternate_feed.jsonl",
+      "scenario_snapshot_path": "C:\\Users\\jbuard\\Downloads\\hackaton demo script\\mock_data\\output\\scenario_snapshot_ab_447_no_alternate_feed.json"
+    },
+    {
+      "scenario_name": "ab_447_parts_delay",
+      "outage_id": "OUT-2026-004525",
+      "customer_count": 1630,
+      "vulnerable_customers": 11,
+      "event_count": 25,
+      "path_counts": {
+        "PathA_MainRepair": 1160,
+        "PathB_AlternateFeed": 180,
+        "PathC_PartialOutageStabilization": 290
+      },
+      "path_c_states": {
+        "out": 187,
+        "brownout": 23,
+        "degraded": 80
+      },
+      "initial_prediction": {
+        "p50": 53,
+        "p80": 58,
+        "p95": 63,
+        "confidence": 0.9
+      },
+      "refined_prediction": {
+        "p50": 124,
+        "p80": 136,
+        "p95": 146,
+        "confidence": 0.9
+      },
+      "simulation": {
+        "mode": "simulation",
+        "sample_count": 1200,
+        "seed": 44720,
+        "method": "seeded_monte_carlo_triangular_distributions"
+      },
+      "conditions": {
+        "weather_severity": "moderate",
+        "alternate_feed_available": true,
+        "parts_in_stock": false,
+        "traffic_multiplier": 1.33,
+        "vegetation_risk_level": "high"
+      },
+      "output_path": "C:\\Users\\jbuard\\Downloads\\hackaton demo script\\mock_data\\output\\event_stream_ab_447_parts_delay.jsonl",
+      "scenario_snapshot_path": "C:\\Users\\jbuard\\Downloads\\hackaton demo script\\mock_data\\output\\scenario_snapshot_ab_447_parts_delay.json"
+    },
+    {
+      "scenario_name": "ab_447_high_vulnerability",
+      "outage_id": "OUT-2026-004526",
+      "customer_count": 1630,
+      "vulnerable_customers": 21,
+      "event_count": 25,
+      "path_counts": {
+        "PathA_MainRepair": 1160,
+        "PathB_AlternateFeed": 180,
+        "PathC_PartialOutageStabilization": 290
+      },
+      "path_c_states": {
+        "out": 187,
+        "brownout": 23,
+        "degraded": 80
+      },
+      "initial_prediction": {
+        "p50": 53,
+        "p80": 58,
+        "p95": 63,
+        "confidence": 0.9
+      },
+      "refined_prediction": {
+        "p50": 100,
+        "p80": 109,
+        "p95": 118,
+        "confidence": 0.9
+      },
+      "simulation": {
+        "mode": "simulation",
+        "sample_count": 1200,
+        "seed": 44721,
+        "method": "seeded_monte_carlo_triangular_distributions"
+      },
+      "conditions": {
+        "weather_severity": "moderate",
+        "alternate_feed_available": true,
+        "parts_in_stock": true,
+        "traffic_multiplier": 1.27,
+        "vegetation_risk_level": "high"
+      },
+      "output_path": "C:\\Users\\jbuard\\Downloads\\hackaton demo script\\mock_data\\output\\event_stream_ab_447_high_vulnerability.jsonl",
+      "scenario_snapshot_path": "C:\\Users\\jbuard\\Downloads\\hackaton demo script\\mock_data\\output\\scenario_snapshot_ab_447_high_vulnerability.json"
+    }
+  ]
+}

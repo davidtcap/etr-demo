@@ -1,0 +1,112 @@
+{
+  "artifact_type": "sandbox_etr_model_summary",
+  "artifact_version": "1.0",
+  "data_sources": {
+    "scenario_features": "C:\\Users\\jbuard\\Downloads\\hackaton demo script\\mock_data\\output\\datasets\\scenario_features.csv",
+    "path_features": "C:\\Users\\jbuard\\Downloads\\hackaton demo script\\mock_data\\output\\datasets\\path_features.csv",
+    "customer_model_frame": "C:\\Users\\jbuard\\Downloads\\hackaton demo script\\mock_data\\output\\modeling\\customer_model_frame.csv",
+    "baseline_metrics": "C:\\Users\\jbuard\\Downloads\\hackaton demo script\\mock_data\\output\\modeling\\baseline_metrics.json"
+  },
+  "scenario_summary": {
+    "scenario_count": 6,
+    "weather_profiles": [
+      "high",
+      "low",
+      "moderate"
+    ],
+    "parts_delay_scenarios": [
+      "ab_447_parts_delay"
+    ],
+    "no_alternate_feed_scenarios": [
+      "ab_447_no_alternate_feed"
+    ]
+  },
+  "baseline_model_summary": {
+    "train_metrics": {
+      "mae": 1.772,
+      "rmse": 2.389
+    },
+    "test_metrics": {
+      "mae": 5.531,
+      "rmse": 7.606
+    }
+  },
+  "top_scenario_deltas": [
+    {
+      "scenario_name": "ab_447_parts_delay",
+      "refinement_delta_minutes": 71,
+      "weather_severity": "moderate",
+      "parts_in_stock": false,
+      "alternate_feed_available": true
+    },
+    {
+      "scenario_name": "ab_447_severe_weather",
+      "refinement_delta_minutes": 57,
+      "weather_severity": "high",
+      "parts_in_stock": true,
+      "alternate_feed_available": true
+    },
+    {
+      "scenario_name": "ab_447_rich_demo",
+      "refinement_delta_minutes": 48,
+      "weather_severity": "moderate",
+      "parts_in_stock": true,
+      "alternate_feed_available": true
+    }
+  ],
+  "path_risk_summary": [
+    {
+      "path_id": "PathA_MainRepair",
+      "avg_p50_minutes": 76.7,
+      "avg_p95_minutes": 91.3,
+      "avg_confidence_score": 0.9,
+      "scenario_count": 6
+    },
+    {
+      "path_id": "PathB_AlternateFeed",
+      "avg_p50_minutes": 32.5,
+      "avg_p95_minutes": 38.5,
+      "avg_confidence_score": 0.92,
+      "scenario_count": 6
+    },
+    {
+      "path_id": "PathC_PartialOutageStabilization",
+      "avg_p50_minutes": 4.0,
+      "avg_p95_minutes": 5.0,
+      "avg_confidence_score": 0.89,
+      "scenario_count": 6
+    }
+  ],
+  "feature_signal_summary": [
+    {
+      "feature": "path_customer_count",
+      "correlation_to_target_p50": 0.895
+    },
+    {
+      "feature": "initial_p50",
+      "correlation_to_target_p50": 0.184
+    },
+    {
+      "feature": "initial_p95",
+      "correlation_to_target_p50": 0.184
+    },
+    {
+      "feature": "traffic_multiplier",
+      "correlation_to_target_p50": 0.171
+    },
+    {
+      "feature": "refined_p50",
+      "correlation_to_target_p50": 0.133
+    },
+    {
+      "feature": "refined_p95",
+      "correlation_to_target_p50": 0.131
+    }
+  ],
+  "recommended_agent_takeaways": [
+    "PathA_MainRepair carries the highest typical restoration duration and should drive most uncertainty messaging.",
+    "Parts delays and severe weather create the largest refinement jumps between initial and refined ETR.",
+    "Alternate-feed availability materially reduces customer-facing restoration time for eligible segments.",
+    "Household risk and meter state are useful context features for customer-prioritization logic, but path assignment remains the dominant timing signal in this synthetic set."
+  ]
+}
